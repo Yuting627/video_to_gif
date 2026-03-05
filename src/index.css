@@ -1,0 +1,70 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    /* 参考图：石灰绿背景、亮黄绿按钮、马卡龙辅助色 */
+    --background: 84 80% 52%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --primary: 84 80% 52%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 330 60% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 84 30% 90%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 54 100% 55%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 12%;
+    --radius: 1rem;
+
+    /* 自定义：按钮/强调色（亮黄绿） */
+    --accent-yellow: #d4ff00;
+    --accent-yellow-dark: #b8e600;
+    /* 马卡龙色 */
+    --pastel-pink: #ffd6e8;
+    --pastel-blue: #d6e8ff;
+    --pastel-lavender: #e8d6ff;
+    --pastel-yellow: #fff9d6;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Nunito", "Segoe UI", system-ui, sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-weight: 800;
+  }
+}
+
+/* 手绘感装饰 */
+.deco-dots::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  top: -6px;
+  right: 20px;
+  background: var(--accent-yellow);
+}
+
+.deco-star::after {
+  content: "✦";
+  position: absolute;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  bottom: -4px;
+  left: 24px;
+}
